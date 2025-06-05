@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const learning_controller_1 = require("../controllers/learning.controller");
+const router = (0, express_1.Router)();
+router.post('/badges', learning_controller_1.awardBadge);
+router.post('/video-sessions', learning_controller_1.recordVideoSession);
+router.post('/worksheet-submissions', learning_controller_1.submitWorksheet);
+router.get('/badges/course', learning_controller_1.getBadgeCountForCourse);
+router.get('/badges/weeks', learning_controller_1.getBadgeCountsByWeek);
+exports.default = router;
